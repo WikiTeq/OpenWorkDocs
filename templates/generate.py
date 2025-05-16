@@ -120,21 +120,25 @@ def main():
             logger.error("✗ Validation failed")
             sys.exit(1)
 
-    # Load configuration
-    config = load_config(args.config)
+    try:
+        # Load configuration
+        config = load_config(args.config)
 
-    # Check for base commit
-    base_commit = config.get('base_commit')
-    if base_commit:
-        logger.info(f"Using base commit: {base_commit}")
-        # Here you would implement git operations to checkout the specified commit
+        # Check for base commit
+        base_commit = config.get('base_commit')
+        if base_commit:
+            logger.info(f"Using base commit: {base_commit}")
+            # Here you would implement git operations to checkout the specified commit
 
-    # Process each policy
-    for policy_name, modules in config['policies'].items():
-        logger.debug(f"Processing policy: {policy_name} with modules: {modules}")
-        compile_document(policy_name, modules, config.get('variables', {}), args.modules_dir, args.output)
+        # Process each policy
+        for policy_name, modules in config['policies'].items():
+            logger.debug(f"Processing policy: {policy_name} with modules: {modules}")
+            compile_document(policy_name, modules, config.get('variables', {}), args.modules_dir, args.output)
 
-    logger.info(f"Document generation complete. Files written to {args.output}/")
+        logger.info(f"Document generation complete. Files written to {args.output}/")
+    except Exception as e:
+        logger.error(f"Error: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
