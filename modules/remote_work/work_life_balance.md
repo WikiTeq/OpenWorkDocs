@@ -82,7 +82,7 @@
 * {{ social_connection|default('Virtual social events and team building') }}
 * {{ ergonomic_support|default('Ergonomic consultation and equipment recommendations') }}
 
-Contact {% if wellness_contact is defined %}{{ wellness_contact }}{% elsif hr_department_name is defined %}{{ hr_department_name }}{% else %}your manager{% endif %} to learn more about these resources.
+Contact {% if wellness_contact is defined %}{{ wellness_contact }}{% elif hr_department_name is defined %}{{ hr_department_name }}{% else %}your manager{% endif %} to learn more about these resources.
 {% endif %}
 
 ## Communication About Workload
