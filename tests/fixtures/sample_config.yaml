@@ -1,0 +1,11 @@
+# Sample config for testing
+variables:
+  company_name: "Test Company"
+  hr_contact_email: "hr@testcompany.com"
+  last_updated: "January 1, 2023"
+  remote_work: true
+  open_source_participation: true
+
+policies:
+  code_of_conduct:
+    - base

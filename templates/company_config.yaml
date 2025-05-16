@@ -1,0 +1,29 @@
+# OpenWorkDocs Configuration File
+
+# Lock to a specific commit (optional)
+base_commit: "a1b2c3d4e5f6"
+
+# Company variables for template substitution
+variables:
+  company_name: "Acme Tech"
+  logo_url: "https://acme-tech.com/logo.png"
+  industry: "Technology"
+  region: "US"
+  hr_contact_email: "hr@acme-tech.com"
+  reporting_system: "Our confidential EthicsHotline at ethics@acme-tech.com"
+  last_updated: "February 15, 2024"
+  remote_work: true
+  open_source_participation: true
+
+# Policies to generate and their constituent modules
+policies:
+  code_of_conduct:
+    - base
+    - tech_company
+  # Add other policies as needed
+  # dress_code:
+  #   - base
+  #   - software_developer
+  # time_off_policy:
+  #   - base
+  #   - remote_workers
