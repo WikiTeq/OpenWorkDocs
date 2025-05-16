@@ -42,7 +42,7 @@ def load_config(config_path):
         return config
     except Exception as e:
         logger.error(f"Error loading configuration: {e}")
-        sys.exit(1)
+        raise
 
 def compile_document(policy_name, module_list, variables, modules_dir, output_dir):
     """Compile a single document from its constituent modules"""
