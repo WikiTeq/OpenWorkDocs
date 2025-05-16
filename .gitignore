@@ -115,3 +115,12 @@ dmypy.json
 
 # Project specific
 output/
+
+# Add to .gitignore
+tests/fixtures/output/
+.coverage
+htmlcov/
+
+# Generated company docs
+my_docs/
+my_company_config.yaml
