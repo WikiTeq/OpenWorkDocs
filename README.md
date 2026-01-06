@@ -6,10 +6,27 @@ OpenWorkDocs is an open-source document generation system for creating customiza
 
 This repository provides a framework to generate company documents using:
 
-- Modular document components that can be assembled based on your needs
-- Configuration-based customization without requiring code modifications
-- Jinja2 templating for dynamic content based on company variables
-- Comprehensive testing to ensure document integrity
+- **Modular document components** that can be assembled based on your needs
+- **Industry-specific modules** - set `industry: "law"` and get comprehensive law firm documentation automatically!
+- **Configuration-based customization** without requiring code modifications
+- **Jinja2 templating** for dynamic content based on company variables
+- **Comprehensive testing** to ensure document integrity
+
+## ✨ Key Features
+
+- **One-Click Industry Setup**: Specify your industry and get specialized documents automatically
+- **Fully Customizable**: Every document uses your company variables and terminology
+- **Professional Quality**: Documents rival those created by expensive consultants
+- **Version Controlled**: Track changes and maintain document history
+- **Extensible**: Easy to add new industries and modules
+
+### Industry System Demo
+
+```yaml
+industry: "law"
+```
+
+**Generates**: 13 documents including ethics compliance, client intake procedures, billing policies, case management, risk management, and more - all customized for your law firm!
 
 ## Installation
 
@@ -46,7 +63,10 @@ pip install -r requirements.txt
 cp templates/company_config.yaml my_company_config.yaml
 ```
 
-2. Edit `my_company_config.yaml` with your company details and preferred modules
+2. Edit `my_company_config.yaml` with your company details. **For industry-specific docs, just add one line:**
+```yaml
+industry: "law"  # Automatically includes all law firm documents!
+```
 
 3. Generate your documents:
 ```bash
@@ -54,6 +74,8 @@ python templates/generate.py --config my_company_config.yaml --output my_docs
 ```
 
 4. Find your generated documents in the `my_docs` directory
+
+**Example Result**: With `industry: "law"`, you'll get 13 documents including client intake procedures, ethics compliance, billing policies, and more!
 
 ### Command Line Options
 
@@ -82,7 +104,7 @@ variables:
   open_source_participation: true
 
 # Industry selection (optional) - automatically includes industry-specific policies
-# Supported: law, healthcare, finance, technology, manufacturing, education, retail
+# When you set industry: "law", ALL law documents are automatically generated!
 industry: "law"
 
 # Policies to generate and their constituent modules
@@ -90,20 +112,39 @@ policies:
   code_of_conduct:
     - base
     - tech_company
-    - us_specific
 
   benefits:
     - base
     - health_insurance
     - financial_benefits
+```
 
-# Industry-specific policies (optional override of defaults)
-# Uncomment to customize which industry modules are included
-# industry_policies:
-#   law:
-#     - client_intake_procedures
-#     - attorney_ethics_compliance
-#     - billing_time_tracking
+### Industry System
+
+The industry feature automatically includes specialized documents for your industry:
+
+**Example**: Setting `industry: "law"` generates these additional documents:
+- `client_intake_procedures.md` - Client onboarding and conflict checking
+- `attorney_ethics_compliance.md` - Professional responsibility and bar rules
+- `billing_time_tracking.md` - Legal billing and IOLTA compliance
+- `document_management.md` - Document security and e-discovery
+- `case_management.md` - Case planning and trial preparation
+- `client_communication.md` - Client interaction standards
+- `risk_management.md` - Malpractice prevention and compliance
+
+**Result**: 6 general policies + 7 industry-specific documents = 13 total customized documents!
+
+### Advanced Configuration
+
+For fine-tuned control, you can override industry defaults:
+
+```yaml
+# Override which industry modules are included
+industry_policies:
+  law:
+    - client_intake_procedures
+    - attorney_ethics_compliance
+    # Only include specific modules
 ```
 
 ### Available Modules
@@ -112,22 +153,22 @@ Each policy type has multiple modules that can be included:
 
 - **code_of_conduct**: base, tech_company, us_specific
 - **benefits**: base, health_insurance, financial_benefits, time_off, workplace_perks
-- **dress_code**: base, software_developer, customer_support, sales_staff, design_team, marketing_team, product_management, executive_leadership, human_resources, it_operations
+- **dress_code**: base, executive_leadership
 - **remote_work**: base, communication, home_office, security, work_life_balance
 - **recruitment**: base, job_posting_templates, interview_process, background_checks, offer_letters
 - **performance_management**: base, goal_setting, performance_reviews, development_plans, performance_improvement
 
 ### Industry-Specific Modules
 
-OpenWorkDocs supports industry-specific policy modules that are automatically included when you specify your industry:
+OpenWorkDocs supports industry-specific policy modules that are **automatically included** when you specify your industry in the configuration. Simply set `industry: "law"` and all relevant documents are generated!
 
-- **law**: client_intake_procedures, attorney_ethics_compliance, billing_time_tracking, document_management, case_management, client_communication, risk_management
-- **healthcare**: hipaa_compliance, patient_privacy, clinical_procedures, medical_ethics, healthcare_risk_management (coming soon)
-- **finance**: regulatory_compliance, client_data_protection, anti_money_laundering, trading_policies (coming soon)
-- **technology**: open_source_policy, ip_assignment, software_development, data_privacy (coming soon)
-- **education**: student_privacy, academic_integrity, campus_safety, educational_ethics (coming soon)
-- **manufacturing**: workplace_safety, quality_control, environmental_compliance, supply_chain (coming soon)
-- **retail**: customer_service, inventory_management, loss_prevention, sales_ethics (coming soon)
+- **law** ✅: client_intake_procedures, attorney_ethics_compliance, billing_time_tracking, document_management, case_management, client_communication, risk_management
+- **healthcare** (coming soon): hipaa_compliance, patient_privacy, clinical_procedures, medical_ethics, healthcare_risk_management
+- **finance** (coming soon): regulatory_compliance, client_data_protection, anti_money_laundering, trading_policies
+- **technology** (coming soon): open_source_policy, ip_assignment, software_development, data_privacy
+- **education** (coming soon): student_privacy, academic_integrity, campus_safety, educational_ethics
+- **manufacturing** (coming soon): workplace_safety, quality_control, environmental_compliance, supply_chain
+- **retail** (coming soon): customer_service, inventory_management, loss_prevention, sales_ethics
 
 ## Template Validation
 
