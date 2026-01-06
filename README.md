@@ -102,6 +102,7 @@ Each policy type has multiple modules that can be included:
 - **benefits**: base, health_insurance, financial_benefits, time_off, workplace_perks
 - **dress_code**: base, software_developer, customer_support, sales_staff, design_team, marketing_team, product_management, executive_leadership, human_resources, it_operations
 - **remote_work**: base, communication, home_office, security, work_life_balance
+- **recruitment**: base, job_posting_templates, interview_process, background_checks, offer_letters
 
 ## Template Validation
 

@@ -23,10 +23,16 @@ openworkdocs/
 │   │   ├── base.md
 │   │   ├── remote_workers.md
 │       └── us_specific.md
-│   └── dress_code/
-│       ├── base.md
-│       ├── sales_staff.md
+│   ├── dress_code/
+│   │   ├── base.md
+│   │   ├── sales_staff.md
 │       └── software_developer.md
+│   └── recruitment/
+│       ├── base.md
+│       ├── job_posting_templates.md
+│       ├── interview_process.md
+│       ├── background_checks.md
+│       └── offer_letters.md
 ├── templates/
 │   ├── company_config.yaml
 │   └── generate.py
