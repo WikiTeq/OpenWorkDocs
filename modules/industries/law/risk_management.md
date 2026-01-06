@@ -83,7 +83,7 @@ Ongoing ethical compliance program:
 * **Prevention Programs**: Proactive measures to prevent ethical issues
 
 ### Bar Association Compliance
-State bar association requirements:
+{{ state_bar }} requirements:
 
 #### CLE Requirements
 * **Minimum Hours**: Completion of required continuing legal education
@@ -92,7 +92,7 @@ State bar association requirements:
 * **Reporting**: Timely reporting of CLE completion
 
 #### Bar Rules Compliance
-* **Advertising Rules**: Compliance with bar advertising restrictions
+* **Advertising Rules**: Compliance with {{ state_bar }} advertising restrictions
 * **Trust Account Rules**: Proper IOLTA account management
 * **Client Protection**: Adherence to client protection rules
 * **Disciplinary Rules**: Awareness of disciplinary procedures

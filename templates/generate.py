@@ -47,6 +47,40 @@ def load_config(config_path):
 def compile_document(policy_name, module_list, variables, modules_dir, output_dir):
     """Compile a single document from its constituent modules"""
     logger = logging.getLogger("openworkdocs")
+
+    # Handle industry documents (single files, not modules)
+    if policy_name.startswith('industries/'):
+        industry_file = os.path.join(modules_dir, f"{policy_name}.md")
+        if not os.path.exists(industry_file):
+            logger.warning(f"Industry document {industry_file} not found, skipping")
+            return
+
+        # Set up Jinja environment
+        env = Environment(loader=FileSystemLoader(modules_dir))
+
+        try:
+            template = env.get_template(f"{policy_name}.md")
+            rendered_content = template.render(**variables)
+        except jinja2.exceptions.TemplateSyntaxError as e:
+            logger.error(f"Template syntax error in {policy_name}: Line {e.lineno}: {e.message}")
+            return
+        except Exception as e:
+            logger.error(f"Error rendering {policy_name}: {e}")
+            return
+
+        # Create output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Write the document (use the last part of the path as filename)
+        doc_name = policy_name.split('/')[-1]
+        output_path = os.path.join(output_dir, f"{doc_name}.md")
+        with open(output_path, 'w') as f:
+            f.write(rendered_content)
+
+        logger.info(f"Generated {output_path}")
+        return
+
+    # Original logic for regular policy documents
     policy_dir = os.path.join(modules_dir, policy_name)
 
     # Check if policy directory exists
@@ -134,6 +168,21 @@ def main():
         for policy_name, modules in config['policies'].items():
             logger.debug(f"Processing policy: {policy_name} with modules: {modules}")
             compile_document(policy_name, modules, config.get('variables', {}), args.modules_dir, args.output)
+
+        # Process industry-specific documents
+        industry = config.get('industry')
+        if industry:
+            industry_dir = os.path.join(args.modules_dir, 'industries', industry)
+            if os.path.exists(industry_dir):
+                logger.info(f"Processing industry documents for: {industry}")
+                for filename in os.listdir(industry_dir):
+                    if filename.endswith('.md'):
+                        doc_name = filename[:-3]  # Remove .md extension
+                        industry_path = f"industries/{industry}/{doc_name}"
+                        logger.debug(f"Processing industry document: {industry_path}")
+                        compile_document(industry_path, [], config.get('variables', {}), args.modules_dir, args.output)
+            else:
+                logger.warning(f"Industry directory {industry_dir} not found")
 
         logger.info(f"Document generation complete. Files written to {args.output}/")
     except Exception as e:

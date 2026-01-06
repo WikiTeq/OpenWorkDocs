@@ -7,7 +7,7 @@
 {% if case_management_philosophy %}
 {{ case_management_philosophy }}
 {% else %}
-Effective case management is the foundation of successful legal practice. We maintain structured processes that ensure thorough case preparation, diligent prosecution or defense, and clear communication with clients and courts.
+Effective case management is the foundation of successful legal practice. We maintain structured processes that ensure thorough case preparation, diligent prosecution or defense, and clear communication with clients and courts. Our corporate practice focuses on complex business transactions, regulatory compliance, and strategic counseling for corporate clients.
 {% endif %}
 
 ## Case Opening and Setup
@@ -23,9 +23,9 @@ Comprehensive evaluation before accepting matters:
 
 #### Case Categorization
 * **Complexity Level**: Straightforward, complex, or high-stakes matters
-* **Practice Area**: Assignment to appropriate practice group
+* **Practice Area**: Assignment to appropriate practice group (Corporate Transactions, Regulatory Compliance, Securities, Mergers & Acquisitions, etc.)
 * **Priority Classification**: Routine, priority, or emergency matters
-* **Resource Allocation**: Determination of required attorney and staff resources
+* **Resource Allocation**: Determination of required attorney and staff resources (considering deal complexity and regulatory requirements)
 
 ### Case Setup Procedures
 Systematic establishment of new matters:

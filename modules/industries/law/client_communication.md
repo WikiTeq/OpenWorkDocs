@@ -44,6 +44,15 @@ Effective client communication is fundamental to successful legal representation
 
 ## Communication Protocols
 
+### Corporate Client Considerations
+For corporate clients, communication protocols account for organizational structure:
+
+* **Primary Contacts**: Designated in-house counsel or executive sponsors
+* **Secondary Contacts**: Additional stakeholders (CFO, CEO, board members)
+* **Communication Preferences**: Email updates with executive summaries
+* **Escalation Procedures**: Clear paths for urgent matters requiring executive attention
+* **Board Communications**: Appropriate protocols for board-level communications
+
 ### Initial Client Communications
 Establishing communication expectations at engagement:
 

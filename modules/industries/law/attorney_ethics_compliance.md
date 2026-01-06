@@ -152,8 +152,8 @@ Privilege may not apply to:
 {{ cle_requirements }}
 {% else %}
 All attorneys must complete required CLE hours annually:
-* **State Requirements**: Minimum hours required by state bar associations
-* **Practice Area CLE**: Specialized training in practice areas
+* **{{ state_bar }} Requirements**: Minimum hours required by {{ state_bar }} ({{ state_bar_cle_hours|default('30') }} hours every 3 years, including {{ state_bar_ethics_hours|default('5') }} ethics hours)
+* **Practice Area CLE**: Specialized training in corporate law and business transactions
 * **Ethics Training**: Mandatory ethics and professional responsibility courses
 * **Diversity Training**: Cultural competency and bias recognition training
 {% endif %}
