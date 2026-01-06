@@ -27,12 +27,18 @@ openworkdocs/
 │   │   ├── base.md
 │   │   ├── sales_staff.md
 │       └── software_developer.md
-│   └── recruitment/
-│       ├── base.md
-│       ├── job_posting_templates.md
-│       ├── interview_process.md
+│   ├── recruitment/
+│   │   ├── base.md
+│   │   ├── job_posting_templates.md
+│   │   ├── interview_process.md
 │       ├── background_checks.md
 │       └── offer_letters.md
+│   └── performance_management/
+│       ├── base.md
+│       ├── goal_setting.md
+│       ├── performance_reviews.md
+│       ├── development_plans.md
+│       └── performance_improvement.md
 ├── templates/
 │   ├── company_config.yaml
 │   └── generate.py

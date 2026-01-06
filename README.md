@@ -103,6 +103,7 @@ Each policy type has multiple modules that can be included:
 - **dress_code**: base, software_developer, customer_support, sales_staff, design_team, marketing_team, product_management, executive_leadership, human_resources, it_operations
 - **remote_work**: base, communication, home_office, security, work_life_balance
 - **recruitment**: base, job_posting_templates, interview_process, background_checks, offer_letters
+- **performance_management**: base, goal_setting, performance_reviews, development_plans, performance_improvement
 
 ## Template Validation
 
