@@ -33,12 +33,21 @@ openworkdocs/
 │   │   ├── interview_process.md
 │       ├── background_checks.md
 │       └── offer_letters.md
-│   └── performance_management/
-│       ├── base.md
-│       ├── goal_setting.md
-│       ├── performance_reviews.md
+│   ├── performance_management/
+│   │   ├── base.md
+│   │   ├── goal_setting.md
+│   │   ├── performance_reviews.md
 │       ├── development_plans.md
 │       └── performance_improvement.md
+│   └── industries/
+│       └── law/
+│           ├── client_intake_procedures.md
+│           ├── attorney_ethics_compliance.md
+│           ├── billing_time_tracking.md
+│           ├── document_management.md
+│           ├── case_management.md
+│           ├── client_communication.md
+│           └── risk_management.md
 ├── templates/
 │   ├── company_config.yaml
 │   └── generate.py

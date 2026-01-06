@@ -81,6 +81,10 @@ variables:
   remote_work: true
   open_source_participation: true
 
+# Industry selection (optional) - automatically includes industry-specific policies
+# Supported: law, healthcare, finance, technology, manufacturing, education, retail
+industry: "law"
+
 # Policies to generate and their constituent modules
 policies:
   code_of_conduct:
@@ -92,6 +96,14 @@ policies:
     - base
     - health_insurance
     - financial_benefits
+
+# Industry-specific policies (optional override of defaults)
+# Uncomment to customize which industry modules are included
+# industry_policies:
+#   law:
+#     - client_intake_procedures
+#     - attorney_ethics_compliance
+#     - billing_time_tracking
 ```
 
 ### Available Modules
@@ -104,6 +116,18 @@ Each policy type has multiple modules that can be included:
 - **remote_work**: base, communication, home_office, security, work_life_balance
 - **recruitment**: base, job_posting_templates, interview_process, background_checks, offer_letters
 - **performance_management**: base, goal_setting, performance_reviews, development_plans, performance_improvement
+
+### Industry-Specific Modules
+
+OpenWorkDocs supports industry-specific policy modules that are automatically included when you specify your industry:
+
+- **law**: client_intake_procedures, attorney_ethics_compliance, billing_time_tracking, document_management, case_management, client_communication, risk_management
+- **healthcare**: hipaa_compliance, patient_privacy, clinical_procedures, medical_ethics, healthcare_risk_management (coming soon)
+- **finance**: regulatory_compliance, client_data_protection, anti_money_laundering, trading_policies (coming soon)
+- **technology**: open_source_policy, ip_assignment, software_development, data_privacy (coming soon)
+- **education**: student_privacy, academic_integrity, campus_safety, educational_ethics (coming soon)
+- **manufacturing**: workplace_safety, quality_control, environmental_compliance, supply_chain (coming soon)
+- **retail**: customer_service, inventory_management, loss_prevention, sales_ethics (coming soon)
 
 ## Template Validation
 

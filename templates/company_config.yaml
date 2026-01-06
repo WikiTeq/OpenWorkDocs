@@ -15,6 +15,10 @@ variables:
   remote_work: true
   open_source_participation: true
 
+# Industry selection - automatically includes industry-specific policies
+# Supported industries: law, healthcare, finance, technology, manufacturing, education, retail
+industry: "law"
+
 # Policies to generate and their constituent modules
 policies:
   code_of_conduct:
@@ -27,3 +31,15 @@ policies:
   # time_off_policy:
   #   - base
   #   - remote_workers
+
+# Industry-specific policies (automatically included based on industry selection above)
+# Uncomment and customize if you want to override default industry modules
+# industry_policies:
+#   law:
+#     - client_intake_procedures
+#     - attorney_ethics_compliance
+#     - billing_time_tracking
+#     - document_management
+#     - case_management
+#     - client_communication
+#     - risk_management
